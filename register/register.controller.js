@@ -1,29 +1,29 @@
 ﻿(function () {
-    'use strict';
+    'use strict'
 
     angular
         .module('app')
-        .controller('RegisterController', RegisterController);
+        .controller('RegisterController', RegisterController)
 
-    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
+    RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService']
     function RegisterController(UserService, $location, $rootScope, FlashService) {
-        var vm = this;
+        var vm = this
 
-        vm.register = register;
+        vm.register = register
 
         function register() {
-            vm.dataLoading = true;
+            vm.dataLoading = true
             UserService.Create(vm.user)
                 .then(function (response) {
                     if (response.success) {
-                        FlashService.Success('Registration successful', true);
-                        $location.path('/login');
+                        FlashService.Success('Registration successful', true)
+                        $location.path('/login')
                     } else {
-                        FlashService.Error(response.message);
-                        vm.dataLoading = false;
+                        FlashService.Error(response.message)
+                        vm.dataLoading = false
                     }
-                });
+                })
         }
     }
 
-})();
+})()

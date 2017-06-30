@@ -3,14 +3,15 @@
 
     angular
         .module('app')
-        .factory('FlashService', FlashService)
+        .factory('StorageService', StorageService)
 
-    FlashService.$inject = ['$rootScope']
-    function FlashService($rootScope) {
+    StorageService.$inject = ['$rootScope']
+    function StorageService($rootScope) {
         var service = {}
 
-        service.Success = Success
-        service.Error = Error
+        service.Get = Get
+        service.Put = Put
+        service.Delete = Delete
 
         initService()
 
@@ -34,20 +35,13 @@
             }
         }
 
-        function Success(message, keepAfterLocationChange) {
-            $rootScope.flash = {
-                message: message,
-                type: 'success', 
-                keepAfterLocationChange: keepAfterLocationChange
-            }
+        function Get(user, hash) {
         }
 
-        function Error(message, keepAfterLocationChange) {
-            $rootScope.flash = {
-                message: message,
-                type: 'error',
-                keepAfterLocationChange: keepAfterLocationChange
-            }
+        function Put(user) {
+        }
+        
+        function Delete(user) {
         }
     }
 

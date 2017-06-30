@@ -9,7 +9,7 @@
     function LoginController($location, AuthenticationService, FlashService) {
         var vm = this
 
-        alert(login)
+        console.log('login', login)
         vm.login = login
 
         (function initController() {

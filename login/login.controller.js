@@ -9,6 +9,7 @@
     function LoginController($location, AuthenticationService, FlashService) {
         var vm = this
 
+        console.log('test')
         console.log('login', login)
         vm.login = login
 

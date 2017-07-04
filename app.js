@@ -27,13 +27,13 @@
                 controllerAs: 'vm'
             })
             
-            .when('/eventlog', {
+            .when('/events', {
                 controller: 'EventlogController',
-                templateUrl: 'eventlog/eventlog.view.html',
+                templateUrl: 'events/events.view.html',
                 controllerAs: 'vm'
             })
 
-            .otherwise({ redirectTo: '/eventlog' })
+            .otherwise({ redirectTo: '/event' })
     }
 
     run.$inject = ['$rootScope', '$location', '$cookies', '$http']
@@ -46,7 +46,7 @@
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
-            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1
+            var restrictedPage = $.inArray($location.path(), ['/login', '/register', '/events']) === -1
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path('/login')

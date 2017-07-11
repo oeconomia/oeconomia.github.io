@@ -2,20 +2,47 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8" />
-    <title>User Registration</title>
-<!--    <link rel="stylesheet" href="//netd6na.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />-->
+    <title>The Game</title>
     <link rel="stylesheet" href="frameworks/bootstrap.min.css" />
     <link href="app-content/app.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="jumbotron">
-        <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+  <!-- Layout
+  | buttons                                     |
+  | delayed messagebox | selectors | highlights |
+  |                    | event log |    ...     |
+  | notifications      |    ...    |            |
+  
+  messagebox 400 x 400
+      picture + text
+      
+  highlights 400 x h
+  
+  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div ng-controller="ButtonController">
+                    <button ng-click="login()"><span class="glyphicon glyphicon-log-in"></span></button>
+                </div>    
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-xl-3">
+                <div class="jumbotron">
+                    <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                </div>
+            </div>
+            <div class="col-xl-6">
                 <div ng-view></div>
+            </div>
+            <div class="col-xl-3">
             </div>
         </div>
     </div>
+    
 
     <!--<script src="//4code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
@@ -39,8 +66,9 @@
     <script src="app-services/user.service.local-storage.js"></script>
 
     <!-- Content -->
+    <script src="mod/localization.js"></script>
     <script src="localization/localization.js"></script>
-    <script src="localization/en.js"></script>
+    <script src="localization/en.js"></script><!-- can be reloaded later -->
     
     <!-- Interface -->
     <script src="home/home.controller.js"></script>

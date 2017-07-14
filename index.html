@@ -23,9 +23,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
-                <div ng-controller="ButtonController">
+                <div ng-controller="MenuController">
                     <button ng-click="login()"><span class="glyphicon glyphicon-log-in"></span></button>
-                </div>    
+                </div>
             </div>
         </div>
     
@@ -66,12 +66,14 @@
     <script src="app-services/user.service.local-storage.js"></script>
 
     <!-- Content -->
-    <script src="mod/localization.js"></script>
-    <script src="localization/localization.js"></script>
+    <script src="vanilla/main.js"></script>
+    <script src="vanilla/data/resource.js"></script>
+    <script src="localization/main.js"></script>
     <script src="localization/en.js"></script><!-- can be reloaded later -->
     
     <!-- Interface -->
     <script src="home/home.controller.js"></script>
+    <script src="home/menu.controller.js"></script>
     <script src="login/login.controller.js"></script>
     <script src="register/register.controller.js"></script>
     <script src="events/events.controller.js"></script>

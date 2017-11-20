@@ -2,6 +2,8 @@ function Resource(name) {
     
 }
 
+var g = {}
+
 g.resources = {
   ERG: Resource(),
   C: Resource(''), // Oil
